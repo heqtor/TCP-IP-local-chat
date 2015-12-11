@@ -1,0 +1,43 @@
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe.config
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.pdb
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csprojResolveAssemblyReference.cache
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.exe
+c:\users\alexander\documents\visual studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.pdb
+C:\Users\Alexander\Documents\Visual Studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
+C:\Users\Alexander\Documents\Visual Studio 2012\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe.config
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.exe
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.pdb
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.pdb
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csprojResolveAssemblyReference.cache
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
+C:\Users\Паша\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe.config
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.exe
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.pdb
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.pdb
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csprojResolveAssemblyReference.cache
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
+C:\Users\Alexander\Desktop\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe.config
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.exe
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.pdb
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.pdb
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csprojResolveAssemblyReference.cache
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
+D:\Учебные файлы\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\EntityFramework.dll
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\EntityFramework.xml
+D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\ru\EntityFramework.resources.dll
