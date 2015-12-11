@@ -12,13 +12,17 @@ namespace ChatLan
 {
     class ConnectData
     {
-        //список сотрудников
-        private List<string> newListIpAddress;
-        public List<string> NewList
+        //список Ip-адресов, сотрудников
+        private List<string> ipAddressList=new List<string>();
+        public List<string> IpAddressList
         {
-            get { return newListIpAddress; }
-            set { newListIpAddress = value; }
+            get { return ipAddressList; }
+            set { ipAddressList = value; }
         }
+        //список Имен, сотрудников
+        private List<string> employeeListName = new List<string>();
+        //список Фамилий, сотрудников
+        private List<string> employeeListSecondName = new List<string>();
 
         //переменная IP, как конечной точки соединения
         private IPAddress ipAddress;
@@ -48,6 +52,7 @@ namespace ChatLan
             get { return newNumberTable = 0; }
         }
 
+        //метод соединения с базой данных
         private SqlConnection ConnectionData()
         {
             SqlConnection newConnection = new SqlConnection(@"Data Source = DEVELOP-ПК; Integrated Security=true; 
@@ -55,34 +60,43 @@ Initial Catalog = dulski;");
             newConnection.Open();
             return newConnection;
         }
-     
-        public void SelectData()
+        //метод выяполнени sql запросов, заполнения списков
+        public void SelectData(string select, List<string> nameList )
         {
-            SqlDataReader newDataReader;
-            SqlConnection connection = ConnectionData();
-            string sqlCommand = string.Format("select IPAddress from IpAddress");
-            SqlCommand newCommand = new SqlCommand(sqlCommand, connection);
-            newDataReader = newCommand.ExecuteReader();
+            SqlDataReader newSqlDataReader;
+            SqlCommand newSqlCommand; 
+            SqlConnection connectionDataBase = ConnectionData();
+            string sqlCommand = string.Format(select);
+            newSqlCommand = new SqlCommand(sqlCommand, connectionDataBase); 
+            newSqlDataReader = newSqlCommand.ExecuteReader();
 
-
-            newListIpAddress = new List<string>();
-            while (newDataReader.Read())
+            
+            while (newSqlDataReader.Read())
             {
-                for (int i = 0; i < newDataReader.FieldCount; i++)
+                for (int i = 0; i < newSqlDataReader.FieldCount; i++)
                 {
-                    newListIpAddress.Add(newDataReader.GetValue(i).ToString().Trim());
+                    nameList.Add(newSqlDataReader.GetValue(i).ToString().Trim());
                 }
             }
+            newSqlDataReader.Close();  
+        }
+
+        private void SelectDataLists()
+        {
+            SelectData("select IpAddress from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", ipAddressList);
+            SelectData("select Employee.Name from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListName);
+            SelectData("select Employee.SecondName from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListSecondName);
         }
 
         public void SelectEmployeeNameIntreeView(TreeView newTreeViewNameEmployees)
         {
-            TreeNode newNode = new TreeNode();
-            for (int i = 0; i < newNode.Level; i++)
+            SelectDataLists();
+            newTreeViewNameEmployees.Nodes.Add("Сотрудники");
+
+            for (int i = 0; i < ipAddressList.Count; i++)
             {
-                newNode.Nodes.Add(newListIpAddress[i]);
+                newTreeViewNameEmployees.Nodes[0].Nodes.Add(employeeListName[i] +" "+ employeeListSecondName[i]);
             }
-            newTreeViewNameEmployees.Nodes.Add(newNode);
         }
         //запись элемента IP адреса
         //private void NameUser_KeyUp(object sender, KeyEventArgs e)

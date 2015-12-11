@@ -22,6 +22,7 @@ namespace ChatLan
             rtb.Text += txt;           
         };
         #endregion
+
         ConnectData newConnect = new ConnectData();
 
         public ChatLan()
@@ -29,9 +30,8 @@ namespace ChatLan
             InitializeComponent();
             //создание потока для вывова метода Recivers
             new Thread(new ThreadStart(Receivers)).Start();
-            newConnect.SelectData();
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
-            EmployeeName.SelectedNode.Toggle();
+            
             //treeView1.BeginUpdate();
             //treeView1.Nodes.Add("Сотрудники");
             //treeView1.Nodes.Add("Rjkz");
@@ -238,6 +238,11 @@ namespace ChatLan
             Application.Run(new ChatLan());
         }
         #endregion
+
+        private void EmployeeName_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            IP.Text = newConnect.IpAddressList[EmployeeName.SelectedNode.Index];
+        }
 
         
 

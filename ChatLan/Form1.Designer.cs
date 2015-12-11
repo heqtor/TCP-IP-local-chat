@@ -228,6 +228,7 @@
             this.EmployeeName.Name = "EmployeeName";
             this.EmployeeName.Size = new System.Drawing.Size(232, 398);
             this.EmployeeName.TabIndex = 17;
+            this.EmployeeName.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.EmployeeName_NodeMouseDoubleClick);
             // 
             // ChatLan
             // 
