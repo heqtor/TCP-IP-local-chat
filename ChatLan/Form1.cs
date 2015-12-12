@@ -21,6 +21,13 @@ namespace ChatLan
         {
             rtb.Text += txt;           
         };
+
+        private delegate void DelegateIpAddress(string txt, TextBox ipAddress);
+        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
+        private DelegateIpAddress delegateIpAddress = (string txt, TextBox ipAddress) =>
+        {
+            ipAddress.Text = txt;
+        };
         #endregion
 
         ConnectData newConnect = new ConnectData();
@@ -30,6 +37,7 @@ namespace ChatLan
             InitializeComponent();
             //создание потока для вывова метода Recivers
             new Thread(new ThreadStart(Receivers)).Start();
+            new Thread(new ThreadStart(Receivers1)).Start();
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
             
             //treeView1.BeginUpdate();
@@ -50,15 +58,15 @@ namespace ChatLan
 
         #region Send and Receivers message
         //метод реализующий отправку сообщения 
-        private void ThreadSendMes(object Message)
+        private void ThreadSendMes(object message)
         {   
             try
             {
                 String MessageText = "";
 
-                if (Message is String)
+                if (message is String)
                 {
-                    MessageText = Message as String;
+                    MessageText = message as String;
                 }
                 else
                 {
@@ -126,6 +134,9 @@ namespace ChatLan
             Thread threadSend = new Thread(new ParameterizedThreadStart(ThreadSendMes));
             threadSend.Start(MessageB.Text + "\n");
             threadSend.Join();
+            Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
+            threadSendIpAddress.Start(IP.Text);
+            threadSendIpAddress.Join();
             MessageB.Text = "";
             ComboName.Enabled = false;
         }    
@@ -155,6 +166,71 @@ namespace ChatLan
                         } while (socketReciver.Available > 0);
                         //отображение сообщения   
                         ChatBox.BeginInvoke(delegateSend, new object[] {Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        private void ThreadSendIpAddress(object ipAddress)
+        {
+            try
+            {
+                String MessageText = "";
+
+                if (ipAddress is String)
+                {
+                    MessageText = ipAddress as String;
+                }
+                else
+                {
+                    throw new Exception("Нужна строка!");
+                }
+                //создание точки подключения к удалёному узлу по IP
+                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IP.Text), 6000);
+                //подключение у удалённому узлу 
+                Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                socket.Connect(newPoint);
+                //кодировка текста сообщения
+                Byte[] convertBytesMes = Encoding.Default.GetBytes(MessageText);
+                //передача сообщения
+                socket.Send(convertBytesMes);
+                //socket.Send(convertBytesMes);
+                socket.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Receivers1()
+        {
+            TcpListener reListener = new TcpListener(6000);
+            reListener.Start();
+            Socket socketReciver;
+            while (true)
+            {
+                try
+                {
+                    socketReciver = reListener.AcceptSocket();
+                    Byte[] receBytes = new Byte[256];
+                    //Чтение сообщения в поток
+                    using (MemoryStream memoryMes = new MemoryStream())
+                    {
+                        //количество байт
+                        Int32 receiverBytes;
+                        do
+                        {
+                            //получаем число байтов
+                            receiverBytes = socketReciver.Receive(receBytes, receBytes.Length, 0);
+                            memoryMes.Write(receBytes, 0, receiverBytes);
+                            //цикл продолжается до тех пор пока есть данные для считывания 
+                        } while (socketReciver.Available > 0);
+                        //отображение сообщения   
+                        IP.BeginInvoke(delegateIpAddress, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), IP });
                     }
                 }
                 catch (Exception exception)
