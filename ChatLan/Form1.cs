@@ -22,15 +22,30 @@ namespace ChatLan
             rtb.Text += txt;           
         };
 
-        private delegate void DelegateIpAddress(string txt, TextBox ipAddress);
+        private delegate void DelegateIpAddress(string txt, string IpAddress);
         //объект делегата реализущий метод заполнения "ричбокса" сообщением 
-        private DelegateIpAddress delegateIpAddress = (string txt, TextBox ipAddress) =>
+        private DelegateIpAddress delegateIpAddress = (string txt, string IpAddress) =>
         {
-            ipAddress.Text = txt;
+            IpAddress = txt;
         };
         #endregion
 
+        //экземпляр класса ConnectData
         ConnectData newConnect = new ConnectData();
+        //ip-адрес конечной точки подключения
+        private string IpConnect;
+        public string IPConnect
+        {
+            get { return IpConnect; }
+            set { IpConnect = value; }
+        }
+        //переменная текущего имени
+        private string thisName;
+        public string ThisName
+        {
+            get { return thisName; }
+            set { thisName = value; }
+        }
 
         public ChatLan()
         {
@@ -38,22 +53,19 @@ namespace ChatLan
             //создание потока для вывова метода Recivers
             new Thread(new ThreadStart(Receivers)).Start();
             new Thread(new ThreadStart(Receivers1)).Start();
+
+            //текущий ip addres
+            newConnect.IpAddressHost = Dns.Resolve(newConnect.HostName = Dns.GetHostName()).AddressList[0];
+            //добавление сотрудников
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
-            
-            //treeView1.BeginUpdate();
-            //treeView1.Nodes.Add("Сотрудники");
-            //treeView1.Nodes.Add("Rjkz");
-            //treeView1.Nodes[0].Nodes.Add("Специалист по кредитам");
-            //for (int i = 1; i < 5; i++)
-            //{
-            //    treeView1.Nodes[0].Nodes.Add("Специалист по кредитам");
-            //}
-            //treeView1.Nodes[0].ImageIndex = 0;
-            //for (int i = 1; i < 10; i++)
-            //{
-            //    treeView1.Nodes[1].Nodes.Add("Специалист по кредитам");
-            //}
-            
+            //имя пользователя
+            thisName = newConnect.NameEmployee();
+
+            if (IPConnect == null)
+            {
+                Send.Enabled = false;
+                MessageB.Enabled = false;
+            }   
         }
 
         #region Send and Receivers message
@@ -73,7 +85,7 @@ namespace ChatLan
                     throw new Exception("Нужна строка!");
                 }
                 //создание точки подключения к удалёному узлу по IP
-                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IP.Text), 7000);
+                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 7000);
                 //подключение у удалённому узлу 
                 Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(newPoint);
@@ -107,7 +119,7 @@ namespace ChatLan
                     throw new Exception("Нужна строка!");
                 }
                 //создание точки подключения к удалёному узлу по IP
-                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IP.Text), 7000);
+                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 7000);
                 //подключение у удалённому узлу 
                 Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(newPoint);
@@ -127,18 +139,19 @@ namespace ChatLan
         //обработчик кнопки отправки сообщения
         private void Send_Click(object sender, EventArgs e)
         {
-            IP.ReadOnly = true;
+            newConnect.InsertDataInBase(MessageB);
+
             Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendName));
-            threadSendName.Start(NameBox.Text + ": ");
+            threadSendName.Start(thisName + ": ");
             threadSendName.Join();
             Thread threadSend = new Thread(new ParameterizedThreadStart(ThreadSendMes));
             threadSend.Start(MessageB.Text + "\n");
             threadSend.Join();
             Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
-            threadSendIpAddress.Start(IP.Text);
+            threadSendIpAddress.Start(IPConnect);
             threadSendIpAddress.Join();
             MessageB.Text = "";
-            ComboName.Enabled = false;
+            
         }    
         //метод реализующий приём сообщения 
         private void Receivers()
@@ -190,7 +203,7 @@ namespace ChatLan
                     throw new Exception("Нужна строка!");
                 }
                 //создание точки подключения к удалёному узлу по IP
-                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IP.Text), 6000);
+                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 6000);
                 //подключение у удалённому узлу 
                 Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(newPoint);
@@ -230,7 +243,7 @@ namespace ChatLan
                             //цикл продолжается до тех пор пока есть данные для считывания 
                         } while (socketReciver.Available > 0);
                         //отображение сообщения   
-                        IP.BeginInvoke(delegateIpAddress, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), IP });
+                        IPtextBox.BeginInvoke(delegateIpAddress, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), IPConnect });
                     }
                 }
                 catch (Exception exception)
@@ -273,13 +286,10 @@ namespace ChatLan
                 MessageBoxButtons.YesNo);
             if (r == DialogResult.Yes)
             {
-                IP.ReadOnly = false;
+                IPConnect = "";
                 ChatBox.Text = "";
-                IP.Text = "";
                 MessageB.Text = "";
-                ComboName.Enabled = true;
-                Send.Enabled = false;
-                ComboName.Items.Clear();    
+                Send.Enabled = false; 
             }
         }
         //метод позволяющий выполнять функцию Send_Click, по средствам нажатия клавиши Enter
@@ -288,39 +298,35 @@ namespace ChatLan
             if (e.KeyData == Keys.Enter)
                 Send_Click(sender, e);
         }
-        //изменение имени пользователя
-        private void NameFormat_Click(object sender, EventArgs e)
-        {
-            NameBox.Enabled = true;
-            NameBox.Focus();
-        }
-        //событие подтверждения имени
-        private void NameBox_Leave(object sender, EventArgs e)
-        {
-            DialogResult result =
-                MessageBox.Show("Использовать это имя?", "", MessageBoxButtons.YesNoCancel);
-            if (result == DialogResult.No)
-            {
-                NameBox.Focus();
-            }
-            else if (result == DialogResult.Yes)
-            {
-                NameBox.Enabled = false;
-            }        
-        }
-
+        //справка
         private void newForm_Click(object sender, EventArgs e)
         {
             Application.Run(new ChatLan());
         }
-        #endregion
-
+        //присвоение ip-адресу, значения 
         private void EmployeeName_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            IP.Text = newConnect.IpAddressList[EmployeeName.SelectedNode.Index];
+            IpConnect = newConnect.IpAddressList[EmployeeName.SelectedNode.Index];
+            MessageB.Enabled = true;
+            Send.Enabled = true;
         }
+        //выбор ввода IP
+        private void EnterIP_Click(object sender, EventArgs e)
+        {
+            IPtextBox.Enabled = true;
+        }
+        //ввод IP
+        private void IPtextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                MessageB.Enabled = true;
+                Send.Enabled = true;
+            }
+        }
+        #endregion
 
-        
+       
 
         /*#region
         //прослушка файла

@@ -12,6 +12,20 @@ namespace ChatLan
 {
     class ConnectData
     {
+        //имя текущего хоста
+        private String hostName = null;
+        public String HostName
+        {
+            get { return hostName; }
+            set { hostName = value; }
+        }
+        //ip текущего хоста
+        private IPAddress ipAddressHost;
+        public IPAddress IpAddressHost
+        {
+            get { return ipAddressHost; }
+            set { ipAddressHost = value; }
+        }
         //список Ip-адресов, сотрудников
         private List<string> ipAddressList=new List<string>();
         public List<string> IpAddressList
@@ -31,26 +45,6 @@ namespace ChatLan
             get { return ipAddress; }
             set { ipAddress = value; }
         }
-        //переменная box, для выбора точки соединения
-        private ComboBox comboBox;
-        public ComboBox ComboBox 
-        {
-            get { return comboBox; }
-            set { comboBox = value; }
-        }
-        //перемення таблицы, содержания данных
-        private DataTable newDataTable;
-        public DataTable NewDataTable
-        {
-            get { return newDataTable; }
-            set { newDataTable = value; }
-        }
-        //перемення выбора номера таблицы, содержащей данные
-        private int newNumberTable;
-        public int NewNumberTable
-        {
-            get { return newNumberTable = 0; }
-        }
 
         //метод соединения с базой данных
         private SqlConnection ConnectionData()
@@ -63,12 +57,11 @@ Initial Catalog = dulski;");
         //метод выяполнени sql запросов, заполнения списков
         public void SelectData(string select, List<string> nameList )
         {
-            SqlDataReader newSqlDataReader;
-            SqlCommand newSqlCommand; 
+
             SqlConnection connectionDataBase = ConnectionData();
-            string sqlCommand = string.Format(select);
-            newSqlCommand = new SqlCommand(sqlCommand, connectionDataBase); 
-            newSqlDataReader = newSqlCommand.ExecuteReader();
+            string sqlCommand = select;
+            SqlCommand newSqlCommand = new SqlCommand(sqlCommand, connectionDataBase);
+            SqlDataReader newSqlDataReader = newSqlCommand.ExecuteReader();
 
             
             while (newSqlDataReader.Read())
@@ -79,6 +72,7 @@ Initial Catalog = dulski;");
                 }
             }
             newSqlDataReader.Close();  
+            connectionDataBase.Close();
         }
 
         private void SelectDataLists()
@@ -86,6 +80,7 @@ Initial Catalog = dulski;");
             SelectData("select IpAddress from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", ipAddressList);
             SelectData("select Employee.Name from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListName);
             SelectData("select Employee.SecondName from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListSecondName);
+
         }
 
         public void SelectEmployeeNameIntreeView(TreeView newTreeViewNameEmployees)
@@ -99,51 +94,42 @@ Initial Catalog = dulski;");
             }
         }
         //запись элемента IP адреса
-        //private void NameUser_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    if (NameUser.Text != "")
-        //    {
-        //        if (e.KeyData == Keys.Enter)
-        //        {
-        //            string addData = string.Format("set identity_insert IPAdress ON; " +
-        //                                              "insert into IPAdress(IpID, IP, NameAdress)" +
-        //                                              "values('{0}','{1}','{2}')",
-        //                IdSelect(), IP.Text, NameUser.Text);
-        //            NewConection.Close();
-        //            NewConection.Open();
-        //            NewCommand = new SqlCommand(addData, NewConection);
-        //            NewCommand.ExecuteNonQuery();
-        //            panelControl.Enabled = false;
-        //            panelControl.Visible = false;
-        //        }
-        //    }
-        //    else MessageBox.Show("Вы не ввели имя!");
-        //}
-        //добавление данных в котрол
-        //private void AddDataInControl(ComboBox comboName)
-        //{
-        //    string addControl = string.Format("select NameAdress from IPAdress");
-        //    NewConection.Close();
-        //    NewConection.Open();
-        //    NewCommand = new SqlCommand(addControl, NewConection);
-        //    NewDataRead = NewCommand.ExecuteReader();
-        //    while (NewDataRead.Read())
-        //    {
-        //        comboName.Items.Add(NewDataRead["NameAdress"]);
-        //    }
-        //}
-        //выбор IP
-        //private void ComboName_TextChanged(object sender, EventArgs e)
-        //{
-        //    string selectNew1 = string.Format("select IP, NameAdress from IPAdress");
-        //    NewConection.Close();
-        //    NewConection.Open();
-        //    NewCommand = new SqlCommand(selectNew1, NewConection);
-        //    NewDataRead = NewCommand.ExecuteReader();
-        //    while (NewDataRead.Read())
-        //    {
-        //        if (ComboName.Text == NewDataRead["NameAdress"].ToString())
-        //            IP.Text = NewDataRead["IP"].ToString();
-        //    }
+        public void InsertDataInBase(RichTextBox messageBox)
+        {
+            List<string> indexList = new List<string>();
+            try
+            {
+                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", IpAddressHost);
+                SelectData(indexIdSelect, indexList);
+                int indexIp = Convert.ToInt32(indexList[0]);
+
+                string sql = string.Format("insert into Message" +
+                      "(DateTime, Text, IndexIP) Values('{0}', '{1}', {2})", DateTime.Now, messageBox.Text, indexIp);
+                SqlConnection newSqlConnection = ConnectionData();
+                SqlCommand cmd = new SqlCommand(sql, newSqlConnection);
+                cmd.ExecuteNonQuery();
+                newSqlConnection.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }       
+        }
+        //метод индетификации имени
+        public string NameEmployee()
+        {
+            List<string> nameList = new List<string>();
+            try
+            {
+                string selectName = string.Format("select Employee.SecondName, Employee.Name from Employee, " +
+                                "IpAddress where IpAddress = '{0}' and IpAddress.IndexIP = Employee.IndexIP", IpAddressHost.ToString());
+                SelectData(selectName, nameList);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            return nameList[0] + " " + nameList[1];
+        }
     }
 }

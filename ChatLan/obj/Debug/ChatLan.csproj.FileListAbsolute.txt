@@ -44,3 +44,13 @@ D:\Учебные файлы\Projects\ChatLan\ChatLan\bin\Debug\ru\EntityFramewo
 D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe.config
 D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.exe
 D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.pdb
+D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.exe
+D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\ChatLan.pdb
+D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\EntityFramework.dll
+D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\EntityFramework.xml
+D:\TrainingFiles\Projects\ChatLan\ChatLan\bin\Debug\ru\EntityFramework.resources.dll
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csprojResolveAssemblyReference.cache
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
