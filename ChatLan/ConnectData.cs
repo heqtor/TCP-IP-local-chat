@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChatLan
 {
     class ConnectData
     {
-        //имя текущего хоста
-        private String hostName = null;
-        public String HostName
-        {
-            get { return hostName; }
-            set { hostName = value; }
-        }
         //ip текущего хоста
         private IPAddress ipAddressHost;
         public IPAddress IpAddressHost
@@ -26,6 +15,7 @@ namespace ChatLan
             get { return ipAddressHost; }
             set { ipAddressHost = value; }
         }
+
         //список Ip-адресов, сотрудников
         private List<string> ipAddressList=new List<string>();
         public List<string> IpAddressList
@@ -33,6 +23,7 @@ namespace ChatLan
             get { return ipAddressList; }
             set { ipAddressList = value; }
         }
+
         //список Имен, сотрудников
         private List<string> employeeListName = new List<string>();
         //список Фамилий, сотрудников
@@ -82,7 +73,7 @@ Initial Catalog = dulski;");
             SelectData("select Employee.SecondName from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListSecondName);
 
         }
-
+        //заполнение "сотрудниками" "дерева"
         public void SelectEmployeeNameIntreeView(TreeView newTreeViewNameEmployees)
         {
             SelectDataLists();
@@ -99,7 +90,8 @@ Initial Catalog = dulski;");
             List<string> indexList = new List<string>();
             try
             {
-                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", IpAddressHost);
+                //получение индекса IP
+                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", IpAddressHost.ToString().Trim());
                 SelectData(indexIdSelect, indexList);
                 int indexIp = Convert.ToInt32(indexList[0]);
 
@@ -119,17 +111,19 @@ Initial Catalog = dulski;");
         public string NameEmployee()
         {
             List<string> nameList = new List<string>();
+            string name = null;
             try
             {
                 string selectName = string.Format("select Employee.SecondName, Employee.Name from Employee, " +
-                                "IpAddress where IpAddress = '{0}' and IpAddress.IndexIP = Employee.IndexIP", IpAddressHost.ToString());
+                                "IpAddress where IpAddress = '{0}' and IpAddress.IndexIP = Employee.IndexIP", IpAddressHost.ToString().Trim());
                 SelectData(selectName, nameList);
+                name = nameList[0] + " " + nameList[1];
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            return nameList[0] + " " + nameList[1];
+            return name;
         }
     }
 }

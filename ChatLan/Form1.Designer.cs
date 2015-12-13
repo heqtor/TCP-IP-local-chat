@@ -162,9 +162,9 @@
             // 
             // FileSend
             // 
-            this.FileSend.Location = new System.Drawing.Point(223, 392);
+            this.FileSend.Location = new System.Drawing.Point(214, 392);
             this.FileSend.Name = "FileSend";
-            this.FileSend.Size = new System.Drawing.Size(105, 24);
+            this.FileSend.Size = new System.Drawing.Size(114, 24);
             this.FileSend.TabIndex = 16;
             this.FileSend.Text = "Отправка файла";
             this.FileSend.UseVisualStyleBackColor = true;

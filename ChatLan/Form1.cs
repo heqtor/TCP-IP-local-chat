@@ -13,25 +13,12 @@ namespace ChatLan
     public partial class ChatLan : Form
     {
 
-        #region Delegate
-
-        private delegate void DelegateSendMsg(string txt, RichTextBox rtb);
-        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
-        private DelegateSendMsg delegateSend = (string txt, RichTextBox rtb) =>
-        {
-            rtb.Text += txt;           
-        };
-
-        private delegate void DelegateIpAddress(string txt, string IpAddress);
-        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
-        private DelegateIpAddress delegateIpAddress = (string txt, string IpAddress) =>
-        {
-            IpAddress = txt;
-        };
-        #endregion
-
+ 
         //экземпляр класса ConnectData
-        ConnectData newConnect = new ConnectData();
+        private ConnectData newConnect;
+        //экземпляр класса Delegate
+        private Delegate newDelegate;
+
         //ip-адрес конечной точки подключения
         private string IpConnect;
         public string IPConnect
@@ -39,23 +26,36 @@ namespace ChatLan
             get { return IpConnect; }
             set { IpConnect = value; }
         }
-        //переменная текущего имени
+
+        //переменная текущего имени пользователя
         private string thisName;
         public string ThisName
         {
             get { return thisName; }
             set { thisName = value; }
         }
+        //ip-адресс текущего pc
+        private IPAddress ipAddressThisHost;
+        public IPAddress IpAddressThisHost
+        {
+            get { return ipAddressThisHost; }
+            set { ipAddressThisHost = value; }
+        }
 
         public ChatLan()
         {
             InitializeComponent();
-            //создание потока для вывова метода Recivers
+
+            newConnect = new ConnectData();
+            newDelegate = new Delegate(); 
+            //создание потоков для вывова метода чтения
             new Thread(new ThreadStart(Receivers)).Start();
-            new Thread(new ThreadStart(Receivers1)).Start();
+            new Thread(new ThreadStart(ReceiversIP)).Start();
+            
 
             //текущий ip addres
-            newConnect.IpAddressHost = Dns.Resolve(newConnect.HostName = Dns.GetHostName()).AddressList[0];
+            IpAddressThisHost = Dns.Resolve(Dns.GetHostName()).AddressList[0];
+            newConnect.IpAddressHost = IpAddressThisHost;
             //добавление сотрудников
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
             //имя пользователя
@@ -65,7 +65,7 @@ namespace ChatLan
             {
                 Send.Enabled = false;
                 MessageB.Enabled = false;
-            }   
+            }
         }
 
         #region Send and Receivers message
@@ -96,98 +96,15 @@ namespace ChatLan
                 //socket.Send(convertBytesMes);
                 socket.Close();
                 //отображение сообщения 
-                ChatBox.BeginInvoke(delegateSend, new object[] {MessageText, ChatBox});
+                ChatBox.BeginInvoke(newDelegate.delegateSend, new object[] {MessageText, ChatBox});
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        //метод реализующий отправку имени
-        private void ThreadSendName(object name)
-        {
-            try
-            {
-                String NameText = "";
-                //проверка наличия строки имени
-                if (name is String)
-                {
-                    NameText = name as String;
-                }
-                else
-                {
-                    throw new Exception("Нужна строка!");
-                }
-                //создание точки подключения к удалёному узлу по IP
-                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 7000);
-                //подключение у удалённому узлу 
-                Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                socket.Connect(newPoint);
-                //кодировка текста сообщения 
-                Byte[] convertBytesName = Encoding.Default.GetBytes(NameText);
-                //передача сообщения
-                socket.Send(convertBytesName);
-                socket.Close();
-                //отображение сообщения 
-                ChatBox.BeginInvoke(delegateSend, new object[] {NameText, ChatBox});
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        //обработчик кнопки отправки сообщения
-        private void Send_Click(object sender, EventArgs e)
-        {
-            newConnect.InsertDataInBase(MessageB);
 
-            Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendName));
-            threadSendName.Start(thisName + ": ");
-            threadSendName.Join();
-            Thread threadSend = new Thread(new ParameterizedThreadStart(ThreadSendMes));
-            threadSend.Start(MessageB.Text + "\n");
-            threadSend.Join();
-            Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
-            threadSendIpAddress.Start(IPConnect);
-            threadSendIpAddress.Join();
-            MessageB.Text = "";
-            
-        }    
-        //метод реализующий приём сообщения 
-        private void Receivers()
-        {        
-            TcpListener reListener = new TcpListener(7000);
-            reListener.Start();
-            Socket socketReciver;
-            while (true)
-            {
-                try
-                {
-                    socketReciver = reListener.AcceptSocket();
-                    Byte[] receBytes = new Byte[256];
-                    //Чтение сообщения в поток
-                    using (MemoryStream memoryMes = new MemoryStream())
-                    {
-                        //количество байт
-                        Int32 receiverBytes;
-                        do
-                        {
-                            //получаем число байтов
-                            receiverBytes = socketReciver.Receive(receBytes, receBytes.Length, 0);
-                            memoryMes.Write(receBytes, 0, receiverBytes);
-                            //цикл продолжается до тех пор пока есть данные для считывания 
-                        } while (socketReciver.Available > 0);
-                        //отображение сообщения   
-                        ChatBox.BeginInvoke(delegateSend, new object[] {Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
-                    }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
-                }
-            }
-        }
-
+        //отправка ip
         private void ThreadSendIpAddress(object ipAddress)
         {
             try
@@ -219,7 +136,62 @@ namespace ChatLan
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Receivers1()
+
+        //отправка сообщения
+        private void SendMessage()
+        {
+            newConnect.InsertDataInBase(MessageB); 
+            IPConnect = IPtextBox.Text;
+            //передача сообщения
+            Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendMes));
+            threadSendName.Start(thisName + ": ");
+            threadSendName.Join();
+            Thread threadSend = new Thread(new ParameterizedThreadStart(ThreadSendMes));
+            threadSend.Start(MessageB.Text + "\n");
+            threadSend.Join();
+            Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
+            threadSendIpAddress.Start(ipAddressThisHost.ToString());
+            threadSendIpAddress.Join();
+            MessageB.Text = "";
+        }
+           
+        //метод реализующий приём сообщения 
+        private void Receivers()
+        {        
+            TcpListener reListener = new TcpListener(7000);
+            reListener.Start();
+            Socket socketReciver;
+            while (true)
+            {
+                try
+                {
+                    socketReciver = reListener.AcceptSocket();
+                    Byte[] receBytes = new Byte[256];
+                    //Чтение сообщения в поток
+                    using (MemoryStream memoryMes = new MemoryStream())
+                    {
+                        //количество байт
+                        Int32 receiverBytes;
+                        do
+                        {
+                            //получаем число байтов
+                            receiverBytes = socketReciver.Receive(receBytes, receBytes.Length, 0);
+                            memoryMes.Write(receBytes, 0, receiverBytes);
+                            //цикл продолжается до тех пор пока есть данные для считывания 
+                        } while (socketReciver.Available > 0);
+                        //отображение сообщения   
+                        ChatBox.BeginInvoke(newDelegate.delegateSend, new object[] {Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        //метод реализующий приём IP-адреса
+        private void ReceiversIP()
         {
             TcpListener reListener = new TcpListener(6000);
             reListener.Start();
@@ -243,7 +215,7 @@ namespace ChatLan
                             //цикл продолжается до тех пор пока есть данные для считывания 
                         } while (socketReciver.Available > 0);
                         //отображение сообщения   
-                        IPtextBox.BeginInvoke(delegateIpAddress, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), IPConnect });
+                        BeginInvoke(newDelegate.delegateIpAddress, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), IPtextBox, Send, MessageB });
                     }
                 }
                 catch (Exception exception)
@@ -256,6 +228,11 @@ namespace ChatLan
         #endregion
 
         #region Functional Application
+        //отправка сообщения
+        private void Send_Click(object sender, EventArgs e)
+        {
+            SendMessage();
+        } 
         //пустая строка
         private void MessageB_MouseClick(object sender, MouseEventArgs e)
         {
@@ -263,10 +240,8 @@ namespace ChatLan
         }
         //метод определяющий IP текущего компьютера
         private void IPme_Click(object sender, EventArgs e)
-        {
-            string hostName = Dns.GetHostName();
-            IPAddress ip = Dns.Resolve(hostName).AddressList[0];
-            MessageBox.Show("Ваш IP адрес: " + ip, "AdressIP");
+        { 
+            MessageBox.Show("Ваш IP адрес: " + IpAddressThisHost, "AdressIP");
         }
         //инф. о программе
         private void AboutProgramm_Click(object sender, EventArgs e)
@@ -320,6 +295,8 @@ namespace ChatLan
         {
             if (e.KeyData == Keys.Enter)
             {
+                IPtextBox.Enabled = false;
+                IPConnect = IPtextBox.Text;
                 MessageB.Enabled = true;
                 Send.Enabled = true;
             }
