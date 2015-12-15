@@ -63,6 +63,16 @@ namespace ChatLan.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ayfon1 {
+            get {
+                object obj = ResourceManager.GetObject("ayfon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fak_izvestnak {
             get {
                 object obj = ResourceManager.GetObject("fak_izvestnak", resourceCulture);
@@ -86,6 +96,16 @@ namespace ChatLan.Properties {
         internal static System.Drawing.Bitmap krasochnie_teksturi_teksturi_29788431770 {
             get {
                 object obj = ResourceManager.GetObject("krasochnie_teksturi_teksturi_29788431770", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

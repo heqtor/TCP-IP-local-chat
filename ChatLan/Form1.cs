@@ -19,6 +19,8 @@ namespace ChatLan
         //экземпляр класса Delegate
         private Delegate newDelegate;
 
+        private FtpServer neFtpServer;
+
         //ip-адрес конечной точки подключения
         private string IpConnect;
         public string IPConnect
@@ -48,9 +50,11 @@ namespace ChatLan
 
             newConnect = new ConnectData();
             newDelegate = new Delegate(); 
+            neFtpServer = new FtpServer();
             //создание потоков для вывова метода чтения
             new Thread(new ThreadStart(Receivers)).Start();
             new Thread(new ThreadStart(ReceiversIP)).Start();
+            new Thread(new ThreadStart(ReceiversFileDowland)).Start();
             
 
             //текущий ip addres
@@ -103,7 +107,39 @@ namespace ChatLan
                 MessageBox.Show(ex.Message);
             }
         }
+        //метод реализующий отправку сообщения 
+        private void ThreadSendFileName(object message)
+        {
+            try
+            {
+                String MessageText = "";
 
+                if (message is String)
+                {
+                    MessageText = message as String;
+                }
+                else
+                {
+                    throw new Exception("Нужна строка!");
+                }
+                //создание точки подключения к удалёному узлу по IP
+                IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 8000);
+                //подключение у удалённому узлу 
+                Socket socket = new Socket(newPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                socket.Connect(newPoint);
+                //кодировка текста сообщения
+                Byte[] convertBytesMes = Encoding.Default.GetBytes(MessageText);
+                //передача сообщения
+                socket.Send(convertBytesMes);
+                //socket.Send(convertBytesMes);
+                socket.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         //отправка ip
         private void ThreadSendIpAddress(object ipAddress)
         {
@@ -137,11 +173,21 @@ namespace ChatLan
             }
         }
 
+
+        //отправка файла
+        private void FileSend_Click(object sender, EventArgs e)
+        {
+            neFtpServer.UploadFileOnFtp();
+            Thread threadSendFileName = new Thread(new ParameterizedThreadStart(ThreadSendFileName));
+            threadSendFileName.Start(neFtpServer.FileName);
+            threadSendFileName.Join();
+        }
         //отправка сообщения
         private void SendMessage()
         {
             newConnect.InsertDataInBase(MessageB); 
             IPConnect = IPtextBox.Text;
+
             //передача сообщения
             Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendMes));
             threadSendName.Start(thisName + ": ");
@@ -181,6 +227,44 @@ namespace ChatLan
                         } while (socketReciver.Available > 0);
                         //отображение сообщения   
                         ChatBox.BeginInvoke(newDelegate.delegateSend, new object[] {Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+
+        //метод реализующий приём сообщения 
+        private void ReceiversFileDowland()
+        {
+            TcpListener reListener = new TcpListener(8000);
+            reListener.Start();
+            Socket socketReciver;
+            while (true)
+            {
+                try
+                {
+                    socketReciver = reListener.AcceptSocket();
+                    Byte[] receBytes = new Byte[256];
+                    //Чтение сообщения в поток
+                    using (MemoryStream memoryMes = new MemoryStream())
+                    {
+                        //количество байт
+                        Int32 receiverBytes;
+                        do
+                        {
+                            //получаем число байтов
+                            receiverBytes = socketReciver.Receive(receBytes, receBytes.Length, 0);
+                            memoryMes.Write(receBytes, 0, receiverBytes);
+                            //цикл продолжается до тех пор пока есть данные для считывания 
+                        } while (socketReciver.Available > 0);
+                        //отображение сообщения   
+                        ChatBox.BeginInvoke(newDelegate.delegateSend, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
+                        BeginInvoke(newDelegate.delegateRecFile,
+                           new object[] {Encoding.Default.GetString(memoryMes.ToArray()), neFtpServer});
                     }
                 }
                 catch (Exception exception)
@@ -302,8 +386,6 @@ namespace ChatLan
             }
         }
         #endregion
-
-       
 
         /*#region
         //прослушка файла

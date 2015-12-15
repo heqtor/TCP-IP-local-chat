@@ -14,6 +14,8 @@ namespace ChatLan
     class Delegate
     {
 
+       
+
         public delegate void DelegateSendMsg(string txt, RichTextBox rtb);
         //объект делегата реализущий метод заполнения "ричбокса" сообщением 
         public DelegateSendMsg delegateSend = (string txt, RichTextBox rtb) =>
@@ -29,6 +31,18 @@ namespace ChatLan
             messageBox.Enabled = true;
             sendButton.Enabled = true;
         };
-         
+
+        public delegate void DelegateRecFile(string txt, FtpServer neFtpServer);
+        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
+        public DelegateRecFile delegateRecFile = (string txt, FtpServer neFtpServer) =>
+        {
+            string a = "Имя файла " + txt;
+            DialogResult dialog = MessageBox.Show(a, "Принимаемый файл", MessageBoxButtons.OKCancel);
+
+            if (dialog == DialogResult.OK)
+            {
+                neFtpServer.DowlandFile();
+            }
+        }; 
     } 
 } 

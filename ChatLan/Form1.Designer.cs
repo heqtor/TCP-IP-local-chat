@@ -168,6 +168,7 @@
             this.FileSend.TabIndex = 16;
             this.FileSend.Text = "Отправка файла";
             this.FileSend.UseVisualStyleBackColor = true;
+            this.FileSend.Click += new System.EventHandler(this.FileSend_Click);
             // 
             // EmployeeName
             // 

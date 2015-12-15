@@ -38,7 +38,7 @@ namespace ChatLan
         }
 
         //метод соединения с базой данных
-        private SqlConnection ConnectionData()
+        virtual public SqlConnection ConnectionData()
         {
             SqlConnection newConnection = new SqlConnection(@"Data Source = DEVELOP-ПК; Integrated Security=true; 
 Initial Catalog = dulski;");
