@@ -1,0 +1,747 @@
+ts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+WARNING: [WARNING] (scripts/client/account_helpers/CustomFilesCache.py, 192): Url error. Reason: [Errno 11004] getaddrinfo failed, url: http://ce.worldoftanks.ru/dcont/clans/emblems/187429/emblem_64x64_tank.png
+ERROR: Traceback (most recent call last):
+ERROR:   File "scripts/client/FlockManager.py", line 71, in __onTrigger
+ERROR:   File "scripts/client/FlockExotic.py", line 130, in onTrigger
+ERROR: TypeError: Embodiment must be set to an Attachment that is not attached elsewhere
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/47_canada_a
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/14_siegfried_line
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/96_prohorovka_defense
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/45_north_america
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/14_siegfried_line
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/73_asia_korea
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45298)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45298)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45298)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/92_stalingrad
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/101_dday
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A453F8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/38_mannerheim_line
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/28_desert
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/92_stalingrad
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/client/helpers/EffectsList.py, 459):
+Traceback (most recent call last):
+  File "scripts/client/helpers/EffectsList.py", line 448, in __playKeyPoint
+  File "scripts/client/helpers/EffectsList.py", line 207, in attachTo
+  File "scripts/client/helpers/EffectsList.py", line 909, in create
+AttributeError: 'NoneType' object has no attribute 'setParameterByName'
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/28_desert
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x25A45558)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/28_desert
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x259EEEF8)
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 599): Player's team not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 605): Player's vehicle ID not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 612): Uses slow player search by name
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 599): Player's team not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 605): Player's vehicle ID not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 612): Uses slow player search by name
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 599): Player's team not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 605): Player's vehicle ID not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 612): Uses slow player search by name
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 599): Player's team not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 605): Player's vehicle ID not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 612): Uses slow player search by name
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 599): Player's team not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 605): Player's vehicle ID not found.
+NOTICE: [NOTE] (scripts/client/gui/battle_control/arena_info/ArenaDataProvider.py, 612): Uses slow player search by name
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/38_mannerheim_line
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+ERROR: [EXCEPTION] (scripts/common/Event.py, 34):
+Traceback (most recent call last):
+  File "scripts/common/Event.py", line 32, in __call__
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 203, in __arena_onAvatarReady
+  File "scripts/client/gui/battle_control/arena_info/listeners.py", line 69, in _invokeListenersMethod
+  File "scripts/client/gui/Scaleform/daapi/view/battle_loading.py", line 157, in invalidateVehicleStatus
+  File "scripts/client/gui/Scaleform/daapi/view/meta/BattleLoadingMeta.py", line 108, in as_setVehicleStatusS
+Exception: PyGFxValue - Failed to invoke method as_setVehicleStatus.
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+WARNING: [WARNING] (scripts/client/account_helpers/CustomFilesCache.py, 33): Method "close" takes too much time 5.6930000782
+INFO: PostProcessing.Phases.fini()
+
+\------------------------------------------------------------------------------------------/
+
+
+
+/------------------------------------------------------------------------------------------\
+BigWorld worldoftanks 2.8.0 (compiled at 11:20:54 Nov 17 2015) starting on 12/15/15 06:58:35
+
+INFO: [Config] Command line: D:/WOT/worldoftanks.exe wot_wait_for_mutex
+INFO: [Config] Default encoding set to utf-8
+INFO: [PY_DEBUG] BigWorld Release Client - Content Type: sd
+
+INFO: [PY_DEBUG] Checking ./res_mods/0.9.13: mods not found
+NOTICE: [NOTE] (scripts/client/post_processing/__init__.py, 267): The quality = 4 was selected.
+NOTICE: [NOTE] (scripts/client/post_processing/__init__.py, 267): The quality = 3 was selected.
+NOTICE: [NOTE] (scripts/client/ConnectionManager.py, 192): User authentication method: token2
+NOTICE: [NOTE] (scripts/client/account_helpers/settings_core/options.py, 652): Change state of voip: (True,)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/36_fishing_bay
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/45_north_america
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/86_himmelsdorf_winter
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/114_czech
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/47_canada_a
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/14_siegfried_line
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/29_el_hallouf
+ERROR: [EXCEPTION] (scripts/client/helpers/EffectsList.py, 459):
+Traceback (most recent call last):
+  File "scripts/client/helpers/EffectsList.py", line 448, in __playKeyPoint
+  File "scripts/client/helpers/EffectsList.py", line 207, in attachTo
+  File "scripts/client/helpers/EffectsList.py", line 909, in create
+AttributeError: 'NoneType' object has no attribute 'setParameterByName'
+
+ERROR: [EXCEPTION] (scripts/client/helpers/EffectsList.py, 459):
+Traceback (most recent call last):
+  File "scripts/client/helpers/EffectsList.py", line 448, in __playKeyPoint
+  File "scripts/client/helpers/EffectsList.py", line 207, in attachTo
+  File "scripts/client/helpers/EffectsList.py", line 909, in create
+AttributeError: 'NoneType' object has no attribute 'setParameterByName'
+
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+INFO: [Info] Screenshot saved - D:\WOT\screenshots\shot_071.jpg
+INFO: [Info] Screenshot saved - D:\WOT\screenshots\shot_072.jpg
+INFO: [Info] Screenshot saved - D:\WOT\screenshots\shot_073.jpg
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x27324F50)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/29_el_hallouf
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+ERROR: [ERROR] (scripts/client/gui/server_events/EventsCache.py, 687): Trying to get quests data from not account player (7, PlayerAvatar at 0x273247C0)
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/14_siegfried_line
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+WARNING: [WARNING] (scripts/client/account_helpers/CustomFilesCache.py, 33): Method "close" takes too much time 2.64899992943
+NOTICE: [NOTE] (scripts/client/ConnectionManager.py, 192): User authentication method: token2
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/14_siegfried_line
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+NOTICE: [NOTE] (scripts/client/ConnectionManager.py, 192): User authentication method: token2
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/13_erlenberg
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/01_karelia
+NOTICE: [NOTE] (scripts/client/game.py, 420): [SPACE] Loading space: spaces/hangar_v2
+INFO: PostProcessing.Phases.fini()
+
+\------------------------------------------------------------------------------------------/
+

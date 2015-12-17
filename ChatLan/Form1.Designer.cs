@@ -35,7 +35,6 @@
             this.MessageB = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.newForm = new System.Windows.Forms.ToolStripMenuItem();
             this.EnterIP = new System.Windows.Forms.ToolStripMenuItem();
             this.exitDialog = new System.Windows.Forms.ToolStripMenuItem();
             this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +45,7 @@
             this.EmployeeName = new System.Windows.Forms.TreeView();
             this.IPtextBox = new System.Windows.Forms.TextBox();
             this.IPlabel = new System.Windows.Forms.Label();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.BackgroundImage = global::ChatLan.Properties.Resources.steel;
+            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu,
             this.IPme,
@@ -91,7 +91,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(575, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(536, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,21 +99,14 @@
             // 
             this.Menu.BackColor = System.Drawing.Color.Transparent;
             this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newForm,
             this.EnterIP,
             this.exitDialog,
+            this.adminToolStripMenuItem,
             this.fdToolStripMenuItem});
             this.Menu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(53, 20);
             this.Menu.Text = "Меню";
-            // 
-            // newForm
-            // 
-            this.newForm.Name = "newForm";
-            this.newForm.Size = new System.Drawing.Size(322, 22);
-            this.newForm.Text = "Создать новое подключение";
-            this.newForm.Click += new System.EventHandler(this.newForm_Click);
             // 
             // EnterIP
             // 
@@ -162,6 +155,7 @@
             // 
             // FileSend
             // 
+            this.FileSend.Enabled = false;
             this.FileSend.Location = new System.Drawing.Point(214, 392);
             this.FileSend.Name = "FileSend";
             this.FileSend.Size = new System.Drawing.Size(114, 24);
@@ -175,7 +169,7 @@
             this.EmployeeName.BackColor = System.Drawing.SystemColors.Control;
             this.EmployeeName.Location = new System.Drawing.Point(343, 22);
             this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.Size = new System.Drawing.Size(232, 398);
+            this.EmployeeName.Size = new System.Drawing.Size(193, 398);
             this.EmployeeName.TabIndex = 17;
             this.EmployeeName.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.EmployeeName_NodeMouseDoubleClick);
             // 
@@ -200,13 +194,20 @@
             this.IPlabel.TabIndex = 19;
             this.IPlabel.Text = "IP-Address:";
             // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
             // ChatLan
             // 
             this.AcceptButton = this.Send;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ChatLan.Properties.Resources.fak_izvestnak;
-            this.ClientSize = new System.Drawing.Size(575, 418);
+            this.ClientSize = new System.Drawing.Size(536, 418);
             this.Controls.Add(this.IPlabel);
             this.Controls.Add(this.IPtextBox);
             this.Controls.Add(this.FileSend);
@@ -240,12 +241,12 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutProgramm;
         private System.Windows.Forms.ToolStripMenuItem exitDialog;
-        private System.Windows.Forms.ToolStripMenuItem newForm;
         private System.Windows.Forms.Button FileSend;
         private System.Windows.Forms.TreeView EmployeeName;
         private System.Windows.Forms.TextBox IPtextBox;
         private System.Windows.Forms.ToolStripMenuItem EnterIP;
         private System.Windows.Forms.Label IPlabel;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
     }
 }
 

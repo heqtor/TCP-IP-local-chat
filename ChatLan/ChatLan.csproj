@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="AdminFormData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="AdminFormData.Designer.cs">
+      <DependentUpon>AdminFormData.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectData.cs" />
     <Compile Include="ConnectDataAdmin.cs" />
@@ -83,8 +83,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Delegate.cs" />
-    <EmbeddedResource Include="AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="TreeViewFiling.cs" />
+    <EmbeddedResource Include="AdminFormData.resx">
+      <DependentUpon>AdminFormData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -94,14 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ConnectionDataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConnectionDataBase.Context.cs</LastGenOutput>
@@ -115,6 +111,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -131,19 +132,52 @@
     <None Include="Resources\fak-izvestnak.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\steel.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-go-next-view.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ayfon1.png" />
+    <None Include="Resources\Alarm-Arrow-Right-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gakuseisean-Ivista.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_green_6052.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_green_7628.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoftoffice2003word_3973.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt_8220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft Office 2003 Word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steel.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,7 @@ namespace ChatLan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChatLan());
+            Application.Run(new AdminFormData());
         }
     }
 }

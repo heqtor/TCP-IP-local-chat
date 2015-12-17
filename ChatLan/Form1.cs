@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -18,8 +20,8 @@ namespace ChatLan
         private ConnectData newConnect;
         //экземпляр класса Delegate
         private Delegate newDelegate;
-
         private FtpServer neFtpServer;
+        private TreeViewFiling newTreeFiling;
 
         //ip-адрес конечной точки подключения
         private string IpConnect;
@@ -28,7 +30,6 @@ namespace ChatLan
             get { return IpConnect; }
             set { IpConnect = value; }
         }
-
         //переменная текущего имени пользователя
         private string thisName;
         public string ThisName
@@ -50,7 +51,9 @@ namespace ChatLan
 
             newConnect = new ConnectData();
             newDelegate = new Delegate(); 
+            
             neFtpServer = new FtpServer();
+            newTreeFiling = new TreeViewFiling();
             //создание потоков для вывова метода чтения
             new Thread(new ThreadStart(Receivers)).Start();
             new Thread(new ThreadStart(ReceiversIP)).Start();
@@ -64,6 +67,8 @@ namespace ChatLan
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
             //имя пользователя
             thisName = newConnect.NameEmployee();
+
+            EmployeeName.ExpandAll();
 
             if (IPConnect == null)
             {
@@ -133,7 +138,7 @@ namespace ChatLan
                 socket.Send(convertBytesMes);
                 //socket.Send(convertBytesMes);
                 socket.Close();
-                
+                ChatBox.BeginInvoke(newDelegate.delegateReqFile, new object[] { MessageText, ChatBox });
             }
             catch (Exception ex)
             {
@@ -173,7 +178,6 @@ namespace ChatLan
             }
         }
 
-
         //отправка файла
         private void FileSend_Click(object sender, EventArgs e)
         {
@@ -182,6 +186,7 @@ namespace ChatLan
             threadSendFileName.Start(neFtpServer.FileName);
             threadSendFileName.Join();
         }
+
         //отправка сообщения
         private void SendMessage()
         {
@@ -190,11 +195,9 @@ namespace ChatLan
 
             //передача сообщения
             Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendMes));
-            threadSendName.Start(thisName + ": ");
+            threadSendName.Start(thisName + ": " + MessageB.Text + "\n");
             threadSendName.Join();
-            Thread threadSend = new Thread(new ParameterizedThreadStart(ThreadSendMes));
-            threadSend.Start(MessageB.Text + "\n");
-            threadSend.Join();
+            
             Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
             threadSendIpAddress.Start(ipAddressThisHost.ToString());
             threadSendIpAddress.Join();
@@ -261,10 +264,9 @@ namespace ChatLan
                             memoryMes.Write(receBytes, 0, receiverBytes);
                             //цикл продолжается до тех пор пока есть данные для считывания 
                         } while (socketReciver.Available > 0);
-                        //отображение сообщения   
-                        ChatBox.BeginInvoke(newDelegate.delegateSend, new object[] { Encoding.Default.GetString(memoryMes.ToArray()), ChatBox });
+                        //отображение сообщения    
                         BeginInvoke(newDelegate.delegateRecFile,
-                           new object[] {Encoding.Default.GetString(memoryMes.ToArray()), neFtpServer});
+                           new object[] {Encoding.Default.GetString(memoryMes.ToArray()), neFtpServer, ChatBox});
                     }
                 }
                 catch (Exception exception)
@@ -307,7 +309,6 @@ namespace ChatLan
                     MessageBox.Show(exception.Message);
                 }
             }
-
         }
         #endregion
 
@@ -348,7 +349,9 @@ namespace ChatLan
                 IPConnect = "";
                 ChatBox.Text = "";
                 MessageB.Text = "";
-                Send.Enabled = false; 
+                Send.Enabled = false;
+                FileSend.Enabled = false;
+                IPtextBox.Text = "";
             }
         }
         //метод позволяющий выполнять функцию Send_Click, по средствам нажатия клавиши Enter
@@ -357,17 +360,21 @@ namespace ChatLan
             if (e.KeyData == Keys.Enter)
                 Send_Click(sender, e);
         }
-        //справка
-        private void newForm_Click(object sender, EventArgs e)
-        {
-            Application.Run(new ChatLan());
-        }
         //присвоение ip-адресу, значения 
         private void EmployeeName_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            IpConnect = newConnect.IpAddressList[EmployeeName.SelectedNode.Index];
-            MessageB.Enabled = true;
-            Send.Enabled = true;
+            try
+            {
+                IpConnect = newConnect.IpAddressList[EmployeeName.SelectedNode.Index];
+                IPtextBox.Text = IpConnect;
+                MessageB.Enabled = true;
+                Send.Enabled = true;
+                FileSend.Enabled = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         //выбор ввода IP
         private void EnterIP_Click(object sender, EventArgs e)
@@ -377,146 +384,31 @@ namespace ChatLan
         //ввод IP
         private void IPtextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            try
             {
-                IPtextBox.Enabled = false;
-                IPConnect = IPtextBox.Text;
-                MessageB.Enabled = true;
-                Send.Enabled = true;
+                if (e.KeyData == Keys.Enter)
+                {
+                    IPtextBox.Enabled = false;
+                    IPConnect = IPtextBox.Text;
+                    MessageB.Enabled = true;
+                    Send.Enabled = true;
+                    FileSend.Enabled = true;
+                }
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }      
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminFormData newForm = new AdminFormData();
+            newForm.Show();
         }
         #endregion
 
-        /*#region
-        //прослушка файла
         
-        private void ListenerFile()
-        {
-            TcpListener tcpListener = new TcpListener(6000);
-            tcpListener.Start();
-            Socket reciveSocket;
-            while (true)
-            {
-                try
-                {
-                    reciveSocket = tcpListener.AcceptSocket();
-                    byte[] recervesBytes = new byte[256];
-                    //сообщение в поток
-                    using (MemoryStream memoryStream = new MemoryStream())
-                    {
-                        int CountRecervByte; //количество считаных байт
-                        int First256Bytes = 0; //переменная первых 256 байт
-                        string FilePath = ""; //имя файла
-                        do
-                        {
-                            //читаем файл
-                            CountRecervByte = reciveSocket.Receive(recervesBytes, recervesBytes.Length, 0);
-                            //первые 256 байт
-                            if (First256Bytes < 256)
-                            {
-                                First256Bytes += CountRecervByte;
-                                byte[] str = recervesBytes;
-                                //если больше 256 байт
-                                if (First256Bytes > 256)
-                                {
-                                    int start = First256Bytes - CountRecervByte;
-                                    int countToGet = 265 - start;
-                                    First256Bytes = 256;
-                                    //В случае если было принято > 256 байт (двумя сообщениями к примеру)
-                                    //Остаток (до 256) записываем в "путь файла"
-                                    str = recervesBytes.Take(countToGet).ToArray(); 
-                                    //А остальную часть - в будующий файл
-                                    recervesBytes = recervesBytes.Skip(countToGet).ToArray();
-                                    memoryStream.Write(recervesBytes, 0 , CountRecervByte);
-                                }
-                                //Накапливаем имя файла
-                                FilePath += Encoding.Default.GetString(str);
-                            }
-                            else
-                            // Записываем имя файла в поток   
-                            memoryStream.Write(recervesBytes, 0, CountRecervByte);    
-                        } while (CountRecervByte == recervesBytes.Length);
-                        //убираем лишние байты
-                        string resFilePath = FilePath.Substring(0, FilePath.IndexOf('\0'));
-                        //записываем в файл
-                        using (FileStream fileStream = new FileStream(resFilePath, FileMode.Create) )
-                        { 
-                            fileStream.Write(memoryStream.ToArray(), 0, memoryStream.ToArray().Length);
-                        }
-                        //уведомим пользователя о файле
-                        ChatBox.BeginInvoke(delegateSend, new object[] {resFilePath, ChatBox});
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
-        }
-        //Отправляем файл
-        private void FileSend_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    IPEndPoint newIP = new IPEndPoint(IPAddress.Parse(IP.Text), 6000);
-                    Socket newSocket = new Socket(newIP.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                    newSocket.Connect(newIP);
-                    //Получаем имя из полного пути к файлу
-                    StringBuilder fileName = new StringBuilder(openFileDialog.FileName);
-                    //Выделяем имя файла
-                    int index = fileName.Length - 1;
-                    while (fileName[index] != '\\' && fileName[index] != '/')
-                    {
-                        index--;
-                    }
-                    //Получаем имя файла
-                    string resFileName = "";
-                    for (int i = index + 1; i < fileName.Length; i++)
-                    {
-                        resFileName += fileName[i];
-                    }
-                    //Записываем в лист
-                    List<byte> First256Bytes = Encoding.Default.GetBytes(resFileName).ToList();
-                    int count = 256 - First256Bytes.Count;
-                    for (int i = 0; i < count; i++)
-                    {
-                        First256Bytes.Add(0);
-                    }
-                    //Начиначение отправки данных
-                    byte[] readBytes = new byte[256]; //кол байтов для записи
-                    using (FileStream newFileStream = new FileStream(openFileDialog.FileName, FileMode.Open))
-                    {
-                        using (BinaryReader newReader = new BinaryReader(newFileStream))
-                        {
-                            int CurrentReadedBytesCount;
-                            //отправление названия файла
-                            newSocket.Send(First256Bytes.ToArray());
-                            do
-                            {
-                                //сам файл по частям
-                                CurrentReadedBytesCount = newReader.Read(readBytes, 0, readBytes.Length);
-                                newSocket.Send(readBytes, CurrentReadedBytesCount, SocketFlags.None);
-                            }
-                            while (CurrentReadedBytesCount == readBytes.Length);
-                        }
-                    }
-                    newSocket.Close();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-                
-            }
-        }
-        #endregion*/
-        
-       
 
     }
 }

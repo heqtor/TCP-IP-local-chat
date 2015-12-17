@@ -54,4 +54,4 @@ D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.ChatLan.resources
 D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Form2.resources
 D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.Properties.Resources.resources
 D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.csproj.GenerateResource.Cache
-D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.AdminForm.resources
+D:\TrainingFiles\Projects\ChatLan\ChatLan\obj\Debug\ChatLan.AdminFormData.resources

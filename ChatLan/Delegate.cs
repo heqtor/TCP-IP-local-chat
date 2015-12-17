@@ -13,9 +13,6 @@ namespace ChatLan
 {
     class Delegate
     {
-
-       
-
         public delegate void DelegateSendMsg(string txt, RichTextBox rtb);
         //объект делегата реализущий метод заполнения "ричбокса" сообщением 
         public DelegateSendMsg delegateSend = (string txt, RichTextBox rtb) =>
@@ -32,17 +29,26 @@ namespace ChatLan
             sendButton.Enabled = true;
         };
 
-        public delegate void DelegateRecFile(string txt, FtpServer neFtpServer);
-        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
-        public DelegateRecFile delegateRecFile = (string txt, FtpServer neFtpServer) =>
+        public delegate void DelegateRecFile(string txt, FtpServer neFtpServer, RichTextBox rtb);
+        //объект делегата реализущий метод скачивания файла
+        public DelegateRecFile delegateRecFile = (string txt, FtpServer neFtpServer, RichTextBox rtb) =>
         {
-            string a = "Имя файла " + txt;
-            DialogResult dialog = MessageBox.Show(a, "Принимаемый файл", MessageBoxButtons.OKCancel);
+            string text = "Скачать файл: " + txt +" ?";
+            DialogResult dialog = MessageBox.Show(text, "Принимаемый файл", MessageBoxButtons.YesNo);
 
-            if (dialog == DialogResult.OK)
+            if (dialog == DialogResult.Yes)
             {
                 neFtpServer.DowlandFile();
+                rtb.Text += "Скачан файл: "+ txt + "\n";
             }
+        };
+
+        public delegate void DelegateReqFile(string txt,  RichTextBox rtb);
+        //объект делегата реализущий метод отображения отправленного файла
+        public DelegateReqFile delegateReqFile = (string txt, RichTextBox rtb) =>
+        {
+            rtb.Text += "Отправлен файл: " + txt + "\n";
+
         }; 
     } 
 } 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 
@@ -15,7 +16,6 @@ namespace ChatLan
             get { return ipAddressHost; }
             set { ipAddressHost = value; }
         }
-
         //список Ip-адресов, сотрудников
         private List<string> ipAddressList=new List<string>();
         public List<string> IpAddressList
@@ -23,20 +23,20 @@ namespace ChatLan
             get { return ipAddressList; }
             set { ipAddressList = value; }
         }
-
         //список Имен, сотрудников
-        private List<string> employeeListName = new List<string>();
-        //список Фамилий, сотрудников
-        private List<string> employeeListSecondName = new List<string>();
-
-        //переменная IP, как конечной точки соединения
-        private IPAddress ipAddress;
-        public IPAddress IpAddress
+        protected List<string> employeeListName = new List<string>();
+        public List<string> EmployeeListName
         {
-            get { return ipAddress; }
-            set { ipAddress = value; }
+            get { return employeeListName; }
+            set { employeeListName = value; }
         }
-
+        //список Фамилий, сотрудников
+        protected List<string> employeeListSecondName = new List<string>();
+        public List<string> EmployeeListSecondName
+        {
+            get { return employeeListName; }
+            set { employeeListName = value; }
+        }
         //метод соединения с базой данных
         virtual public SqlConnection ConnectionData()
         {
@@ -65,23 +65,28 @@ Initial Catalog = dulski;");
             newSqlDataReader.Close();  
             connectionDataBase.Close();
         }
-
-        private void SelectDataLists()
+        //метод заполнения списков
+        protected void SelectDataLists()
         {
             SelectData("select IpAddress from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", ipAddressList);
             SelectData("select Employee.Name from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListName);
             SelectData("select Employee.SecondName from IpAddress, Employee where Employee.IndexIP=IpAddress.IndexIP", employeeListSecondName);
-
         }
-        //заполнение "сотрудниками" "дерева"
+        //заполнение "сотрудниками" "дерева" главной формы
         public void SelectEmployeeNameIntreeView(TreeView newTreeViewNameEmployees)
         {
             SelectDataLists();
+
+            ImageList newImageList = new ImageList();
+            newImageList.ImageSize = new Size(16, 16);
+            newImageList.Images.Add(Properties.Resources.circle_green_7628);
+
+            newTreeViewNameEmployees.ImageList = newImageList;
             newTreeViewNameEmployees.Nodes.Add("Сотрудники");
 
-            for (int i = 0; i < ipAddressList.Count; i++)
+            for (int i = 0; i < IpAddressList.Count; i++)
             {
-                newTreeViewNameEmployees.Nodes[0].Nodes.Add(employeeListName[i] +" "+ employeeListSecondName[i]);
+                newTreeViewNameEmployees.Nodes[0].Nodes.Add(employeeListName[i] + " " + employeeListSecondName[i]);
             }
         }
         //запись элемента IP адреса
@@ -91,7 +96,7 @@ Initial Catalog = dulski;");
             try
             {
                 //получение индекса IP
-                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", IpAddressHost.ToString().Trim());
+                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", ipAddressHost.ToString().Trim());
                 SelectData(indexIdSelect, indexList);
                 int indexIp = Convert.ToInt32(indexList[0]);
 

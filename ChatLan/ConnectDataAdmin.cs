@@ -1,43 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChatLan
 {
     class ConnectDataAdmin : ConnectData
     {
-        //переменная для созд. таблицы
+        //переменная для таблицы, для содержания данных
         private DataTable newDataTable;
         protected DataTable NewDataTable
         {
             get { return newDataTable; }
             set { newDataTable = value; }
         }
-
         //переменная служит для определения номера таблицы, выбранной из БД
         private int numberTable;
         protected int NumberTable
         {
             get { return numberTable = 0; }
         }
-
         //добавление данных в таблицу
         public void SelectData(DataGridView newGridView, String sqlCommand)
         {
-            newGridView.Rows.Clear();
-            DataSet newSet = new DataSet();
+            try
+            {
+                newGridView.Rows.Clear();
+                DataSet newSet = new DataSet();
 
-            SqlConnection connection = ConnectionData();
-            SqlDataAdapter newDataAdapter = new SqlDataAdapter(sqlCommand, connection);
-            newDataAdapter.Fill(newSet);
-            connection.Close();
+                SqlConnection connection = ConnectionData();
+                SqlDataAdapter newDataAdapter = new SqlDataAdapter(sqlCommand, connection);
+                newDataAdapter.Fill(newSet);
+                connection.Close();
 
-            PrintData(newSet, numberTable, newGridView);
+                PrintData(newSet, numberTable, newGridView);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         //добавление данных в "главный" DataGridView
         private void PrintData(DataSet newSet, int indexTable, DataGridView newGridView)
@@ -66,6 +67,23 @@ namespace ChatLan
             {
                 MessageBox.Show("Не найдено данных по вашему запросу!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
+        }
+        //удаленние данных из базы данных
+        public void DeleteData(int id)
+        {
+            try
+            {
+                SqlConnection connection = ConnectionData();
+                string sqlCommandDelete = string.Format("Delete from Message where Id ='{0}'", id);
+                SqlCommand sqlCommand = new SqlCommand(sqlCommandDelete, connection);
+                sqlCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+           
         }
     }
 }
