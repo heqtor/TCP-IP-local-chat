@@ -33,20 +33,23 @@
             this.Send = new System.Windows.Forms.Button();
             this.ChatBox = new System.Windows.Forms.RichTextBox();
             this.MessageB = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.EnterIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.EnterName = new System.Windows.Forms.ToolStripMenuItem();
             this.exitDialog = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.IPme = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AboutProgramm = new System.Windows.Forms.ToolStripMenuItem();
             this.FileSend = new System.Windows.Forms.Button();
             this.EmployeeName = new System.Windows.Forms.TreeView();
             this.IPtextBox = new System.Windows.Forms.TextBox();
             this.IPlabel = new System.Windows.Forms.Label();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.Namelabel = new System.Windows.Forms.Label();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.performanceCounter1 = new System.Diagnostics.PerformanceCounter();
+            this.MenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).BeginInit();
             this.SuspendLayout();
             // 
             // Send
@@ -61,10 +64,10 @@
             // 
             // ChatBox
             // 
-            this.ChatBox.Location = new System.Drawing.Point(11, 55);
+            this.ChatBox.Location = new System.Drawing.Point(11, 80);
             this.ChatBox.Name = "ChatBox";
             this.ChatBox.ReadOnly = true;
-            this.ChatBox.Size = new System.Drawing.Size(317, 262);
+            this.ChatBox.Size = new System.Drawing.Size(317, 237);
             this.ChatBox.TabIndex = 2;
             this.ChatBox.Text = "";
             // 
@@ -78,28 +81,27 @@
             this.MessageB.Tag = "Введите сообщение...";
             this.MessageB.Text = "Введите сообщение...";
             this.MessageB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MessageB_MouseClick);
-            this.MessageB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MessageB_KeyUp);
             // 
-            // menuStrip1
+            // MenuStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip.BackColor = System.Drawing.Color.Transparent;
+            this.MenuStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuStrip.BackgroundImage")));
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu,
-            this.IPme,
-            this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(536, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
+            this.IPme});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.MenuStrip.Size = new System.Drawing.Size(536, 24);
+            this.MenuStrip.TabIndex = 7;
+            this.MenuStrip.Text = "menuStrip1";
             // 
             // Menu
             // 
             this.Menu.BackColor = System.Drawing.Color.Transparent;
             this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EnterIP,
+            this.EnterName,
             this.exitDialog,
             this.adminToolStripMenuItem,
             this.fdToolStripMenuItem});
@@ -115,12 +117,26 @@
             this.EnterIP.Text = "Ввод IP";
             this.EnterIP.Click += new System.EventHandler(this.EnterIP_Click);
             // 
+            // EnterName
+            // 
+            this.EnterName.Name = "EnterName";
+            this.EnterName.Size = new System.Drawing.Size(322, 22);
+            this.EnterName.Text = "Ввод Имени";
+            this.EnterName.Click += new System.EventHandler(this.EnterName_Click);
+            // 
             // exitDialog
             // 
             this.exitDialog.Name = "exitDialog";
             this.exitDialog.Size = new System.Drawing.Size(322, 22);
             this.exitDialog.Text = "Закончить диалог с текущим пользователем";
             this.exitDialog.Click += new System.EventHandler(this.exitDialog_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // fdToolStripMenuItem
             // 
@@ -137,21 +153,6 @@
             this.IPme.Size = new System.Drawing.Size(97, 20);
             this.IPme.Text = "Узнать свой IP";
             this.IPme.Click += new System.EventHandler(this.IPme_Click);
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutProgramm});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.справкаToolStripMenuItem.Text = "Спра&вка";
-            // 
-            // AboutProgramm
-            // 
-            this.AboutProgramm.Name = "AboutProgramm";
-            this.AboutProgramm.Size = new System.Drawing.Size(156, 22);
-            this.AboutProgramm.Text = "&О программе...";
-            this.AboutProgramm.Click += new System.EventHandler(this.AboutProgramm_Click);
             // 
             // FileSend
             // 
@@ -194,12 +195,26 @@
             this.IPlabel.TabIndex = 19;
             this.IPlabel.Text = "IP-Address:";
             // 
-            // adminToolStripMenuItem
+            // Namelabel
             // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
-            this.adminToolStripMenuItem.Text = "Admin";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            this.Namelabel.AutoSize = true;
+            this.Namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.Namelabel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Namelabel.Location = new System.Drawing.Point(57, 55);
+            this.Namelabel.Name = "Namelabel";
+            this.Namelabel.Size = new System.Drawing.Size(42, 14);
+            this.Namelabel.TabIndex = 21;
+            this.Namelabel.Text = "Name:";
+            // 
+            // NameBox
+            // 
+            this.NameBox.Enabled = false;
+            this.NameBox.Location = new System.Drawing.Point(105, 53);
+            this.NameBox.Multiline = true;
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(128, 21);
+            this.NameBox.TabIndex = 20;
+            this.NameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NameBox_KeyUp);
             // 
             // ChatLan
             // 
@@ -208,13 +223,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ChatLan.Properties.Resources.fak_izvestnak;
             this.ClientSize = new System.Drawing.Size(536, 418);
+            this.Controls.Add(this.Namelabel);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.IPlabel);
             this.Controls.Add(this.IPtextBox);
             this.Controls.Add(this.FileSend);
             this.Controls.Add(this.Send);
             this.Controls.Add(this.MessageB);
             this.Controls.Add(this.ChatBox);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.EmployeeName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -222,8 +239,9 @@
             this.MinimizeBox = false;
             this.Name = "ChatLan";
             this.Text = "ChatLan";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,12 +252,10 @@
         private System.Windows.Forms.Button Send;
         private System.Windows.Forms.RichTextBox ChatBox;
         private System.Windows.Forms.RichTextBox MessageB;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem Menu;
         private System.Windows.Forms.ToolStripMenuItem fdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem IPme;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem AboutProgramm;
         private System.Windows.Forms.ToolStripMenuItem exitDialog;
         private System.Windows.Forms.Button FileSend;
         private System.Windows.Forms.TreeView EmployeeName;
@@ -247,6 +263,10 @@
         private System.Windows.Forms.ToolStripMenuItem EnterIP;
         private System.Windows.Forms.Label IPlabel;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EnterName;
+        private System.Windows.Forms.Label Namelabel;
+        private System.Windows.Forms.TextBox NameBox;
+        private System.Diagnostics.PerformanceCounter performanceCounter1;
     }
 }
 

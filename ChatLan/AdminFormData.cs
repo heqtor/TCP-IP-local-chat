@@ -14,8 +14,11 @@ namespace ChatLan
 {
     public partial class AdminFormData : Form
     {
+        //переменна вызова метода удаления файла с сервера
         private FtpServer deletFile;
+        //переменна вызова метода отображения данных о сообщениях
         private ConnectDataAdmin newConnectData;
+        //переменна для вызова метода отображения содержания файлов сервера
         private TreeViewFiling contentServer;
 
         public AdminFormData()

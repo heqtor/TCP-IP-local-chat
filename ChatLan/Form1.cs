@@ -14,14 +14,11 @@ namespace ChatLan
 {
     public partial class ChatLan : Form
     {
-
- 
         //экземпляр класса ConnectData
         private ConnectData newConnect;
         //экземпляр класса Delegate
         private Delegate newDelegate;
         private FtpServer neFtpServer;
-        private TreeViewFiling newTreeFiling;
 
         //ip-адрес конечной точки подключения
         private string IpConnect;
@@ -51,9 +48,8 @@ namespace ChatLan
 
             newConnect = new ConnectData();
             newDelegate = new Delegate(); 
-            
             neFtpServer = new FtpServer();
-            newTreeFiling = new TreeViewFiling();
+
             //создание потоков для вывова метода чтения
             new Thread(new ThreadStart(Receivers)).Start();
             new Thread(new ThreadStart(ReceiversIP)).Start();
@@ -67,6 +63,7 @@ namespace ChatLan
             newConnect.SelectEmployeeNameIntreeView(EmployeeName);
             //имя пользователя
             thisName = newConnect.NameEmployee();
+            NameBox.Text = thisName;
 
             EmployeeName.ExpandAll();
 
@@ -125,7 +122,7 @@ namespace ChatLan
                 }
                 else
                 {
-                    throw new Exception("Нужна строка!");
+                    throw new Exception("Отправка отменена!");
                 }
                 //создание точки подключения к удалёному узлу по IP
                 IPEndPoint newPoint = new IPEndPoint(IPAddress.Parse(IPConnect), 8000);
@@ -177,27 +174,32 @@ namespace ChatLan
                 MessageBox.Show(ex.Message);
             }
         }
-
         //отправка файла
         private void FileSend_Click(object sender, EventArgs e)
         {
-            neFtpServer.UploadFileOnFtp();
+            neFtpServer.UploadFileOnFtp();           
+            //отправка файла
             Thread threadSendFileName = new Thread(new ParameterizedThreadStart(ThreadSendFileName));
             threadSendFileName.Start(neFtpServer.FileName);
             threadSendFileName.Join();
+            //передача IP, отправителя сообщения
+            Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
+            threadSendIpAddress.Start(ipAddressThisHost.ToString());
+            threadSendIpAddress.Join();
+            MessageB.Text = "";
         }
-
         //отправка сообщения
         private void SendMessage()
         {
-            newConnect.InsertDataInBase(MessageB); 
+            newConnect.InsertDataInBase(MessageB, thisName); 
             IPConnect = IPtextBox.Text;
-
+            thisName = NameBox.Text;
+            
             //передача сообщения
             Thread threadSendName = new Thread(new ParameterizedThreadStart(ThreadSendMes));
             threadSendName.Start(thisName + ": " + MessageB.Text + "\n");
             threadSendName.Join();
-            
+            //передача IP, отправителя сообщения
             Thread threadSendIpAddress = new Thread(new ParameterizedThreadStart(ThreadSendIpAddress));
             threadSendIpAddress.Start(ipAddressThisHost.ToString());
             threadSendIpAddress.Join();
@@ -238,8 +240,6 @@ namespace ChatLan
                 }
             }
         }
-
-
         //метод реализующий приём сообщения 
         private void ReceiversFileDowland()
         {
@@ -275,7 +275,6 @@ namespace ChatLan
                 }
             }
         }
-
         //метод реализующий приём IP-адреса
         private void ReceiversIP()
         {
@@ -328,12 +327,6 @@ namespace ChatLan
         { 
             MessageBox.Show("Ваш IP адрес: " + IpAddressThisHost, "AdressIP");
         }
-        //инф. о программе
-        private void AboutProgramm_Click(object sender, EventArgs e)
-        {
-            Form2 newForm = new Form2();
-            newForm.Show();
-        }
         //выход из программы
         private void fdToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -347,18 +340,16 @@ namespace ChatLan
             if (r == DialogResult.Yes)
             {
                 IPConnect = "";
+                thisName = "";
+                thisName = newConnect.NameEmployee();
                 ChatBox.Text = "";
                 MessageB.Text = "";
                 Send.Enabled = false;
                 FileSend.Enabled = false;
                 IPtextBox.Text = "";
+                NameBox.Text = "";
+                NameBox.Text = thisName;
             }
-        }
-        //метод позволяющий выполнять функцию Send_Click, по средствам нажатия клавиши Enter
-        private void MessageB_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-                Send_Click(sender, e);
         }
         //присвоение ip-адресу, значения 
         private void EmployeeName_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -380,6 +371,9 @@ namespace ChatLan
         private void EnterIP_Click(object sender, EventArgs e)
         {
             IPtextBox.Enabled = true;
+            MessageB.Enabled = false;
+            Send.Enabled = false;
+            FileSend.Enabled = false;
         }
         //ввод IP
         private void IPtextBox_KeyUp(object sender, KeyEventArgs e)
@@ -388,11 +382,14 @@ namespace ChatLan
             {
                 if (e.KeyData == Keys.Enter)
                 {
+                    if (Send.Enabled == false)
+                    {
+                        MessageB.Enabled = true;
+                        Send.Enabled = true;
+                        FileSend.Enabled = true;
+                    }
                     IPtextBox.Enabled = false;
                     IPConnect = IPtextBox.Text;
-                    MessageB.Enabled = true;
-                    Send.Enabled = true;
-                    FileSend.Enabled = true;
                 }
             }
             catch (Exception exception)
@@ -400,15 +397,42 @@ namespace ChatLan
                 MessageBox.Show(exception.Message);
             }      
         }
-
+        //форма админа
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminFormData newForm = new AdminFormData();
             newForm.Show();
         }
+        //выбор ввода Имени
+        private void EnterName_Click(object sender, EventArgs e)
+        {
+            NameBox.Enabled = true;
+            MessageB.Enabled = false;
+            Send.Enabled = false;
+            FileSend.Enabled = false;
+        }
+        //ввод Имени
+        private void NameBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    if (Send.Enabled == false)
+                    {
+                        MessageB.Enabled = true;
+                        Send.Enabled = true;
+                        FileSend.Enabled = true;
+                    }
+                    NameBox.Enabled = false;
+                    thisName = NameBox.Text;                  
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
         #endregion
-
-        
-
     }
 }

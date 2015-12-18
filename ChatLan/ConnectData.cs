@@ -75,41 +75,49 @@ Initial Catalog = dulski;");
         //заполнение "сотрудниками" "дерева" главной формы
         public void SelectEmployeeNameIntreeView(TreeView newTreeViewNameEmployees)
         {
-            SelectDataLists();
-
-            ImageList newImageList = new ImageList();
-            newImageList.ImageSize = new Size(16, 16);
-            newImageList.Images.Add(Properties.Resources.circle_green_7628);
-
-            newTreeViewNameEmployees.ImageList = newImageList;
-            newTreeViewNameEmployees.Nodes.Add("Сотрудники");
-
-            for (int i = 0; i < IpAddressList.Count; i++)
-            {
-                newTreeViewNameEmployees.Nodes[0].Nodes.Add(employeeListName[i] + " " + employeeListSecondName[i]);
-            }
-        }
-        //запись элемента IP адреса
-        public void InsertDataInBase(RichTextBox messageBox)
-        {
-            List<string> indexList = new List<string>();
             try
             {
-                //получение индекса IP
-                string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", ipAddressHost.ToString().Trim());
-                SelectData(indexIdSelect, indexList);
-                int indexIp = Convert.ToInt32(indexList[0]);
+                SelectDataLists();
 
-                string sql = string.Format("insert into Message" +
-                      "(DateTime, Text, IndexIP) Values('{0}', '{1}', {2})", DateTime.Now, messageBox.Text, indexIp);
-                SqlConnection newSqlConnection = ConnectionData();
-                SqlCommand cmd = new SqlCommand(sql, newSqlConnection);
-                cmd.ExecuteNonQuery();
-                newSqlConnection.Close();
+                ImageList newImageList = new ImageList();
+                newImageList.ImageSize = new Size(16, 16);
+                newImageList.Images.Add(Properties.Resources.circle_green_7628);
+
+                newTreeViewNameEmployees.ImageList = newImageList;
+                newTreeViewNameEmployees.Nodes.Add("Сотрудники");
+
+                for (int i = 0; i < IpAddressList.Count; i++)
+                {
+                    newTreeViewNameEmployees.Nodes[0].Nodes.Add(employeeListName[i] + " " + employeeListSecondName[i]);
+                }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }         
+        }
+        //запись элемента IP адреса
+        public void InsertDataInBase(RichTextBox messageBox, string thisName)
+        {
+            List<string> indexList = new List<string>();
+            try
+            {
+                    //получение индекса IP
+                    string indexIdSelect = string.Format("select IndexIP from IpAddress where IpAddress = '{0}'", ipAddressHost.ToString().Trim());
+                    SelectData(indexIdSelect, indexList);
+                    int indexIp = Convert.ToInt32(indexList[0]);
+
+                    string sql = string.Format("insert into Message" +
+                          "(DateTime, Text, IndexIP) Values('{0}', '{1}', {2})", DateTime.Now, messageBox.Text, indexIp);
+                    SqlConnection newSqlConnection = ConnectionData();
+                    SqlCommand cmd = new SqlCommand(sql, newSqlConnection);
+                    cmd.ExecuteNonQuery();
+                    newSqlConnection.Close(); 
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Имя пользователя, не может быть установленно!");
             }       
         }
         //метод индетификации имени
@@ -124,9 +132,9 @@ Initial Catalog = dulski;");
                 SelectData(selectName, nameList);
                 name = nameList[0] + " " + nameList[1];
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Имя пользователя, не может быть установленно!");
             }
             return name;
         }

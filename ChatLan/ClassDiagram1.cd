@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChatLan.AdminFormData">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACACABACAAAAAAAACAkAgCQAgIARIAIAAAIAAAAAA=</HashCode>
+      <FileName>AdminFormData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.ConnectData">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAEAAAAAAIAAgAQgAAEAAgAAQIAIAAACQAAAA=</HashCode>
+      <FileName>ConnectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.ConnectDataAdmin">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAgAAAAAAAAAgAAAAAkAEAAAABAAAAAA=</HashCode>
+      <FileName>ConnectDataAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.Delegate">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ChatLan.Delegate.DelegateSendMsg" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Delegate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="ChatLan.Delegate.DelegateIpAddress">
+        <TypeIdentifier>
+          <NewMemberFileName>Delegate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="ChatLan.Delegate.DelegateRecFile">
+        <TypeIdentifier>
+          <NewMemberFileName>Delegate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="ChatLan.Delegate.DelegateReqFile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Delegate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAAACA=</HashCode>
+      <FileName>Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.ChatLan">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>2BAIgACBQCAAIBoiCOGASAAiJhAMAAQAgFAgAISAIDI=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.FtpServer">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAIBAAQAAAAAAAAAEAAAAAAEEAAABAAAA=</HashCode>
+      <FileName>FtpServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLan.TreeViewFiling">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TreeViewFiling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

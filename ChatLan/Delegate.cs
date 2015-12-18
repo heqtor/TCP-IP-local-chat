@@ -14,14 +14,14 @@ namespace ChatLan
     class Delegate
     {
         public delegate void DelegateSendMsg(string txt, RichTextBox rtb);
-        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
+        //объект делегата реализующий метод заполнения "ричбокса" сообщением 
         public DelegateSendMsg delegateSend = (string txt, RichTextBox rtb) =>
         {
             rtb.Text += txt;
         };
 
         public delegate void DelegateIpAddress(string txt, TextBox IpAddress, Button sendButton, RichTextBox messageBox);
-        //объект делегата реализущий метод заполнения "ричбокса" сообщением 
+        //объект делегата реализующий метод заполнения "ричбокса" сообщением 
         public DelegateIpAddress delegateIpAddress = (string txt, TextBox IpAddress, Button sendButton, RichTextBox messageBox) =>
         {
             IpAddress.Text = txt;
@@ -30,7 +30,7 @@ namespace ChatLan
         };
 
         public delegate void DelegateRecFile(string txt, FtpServer neFtpServer, RichTextBox rtb);
-        //объект делегата реализущий метод скачивания файла
+        //объект делегата реализующий метод скачивания файла
         public DelegateRecFile delegateRecFile = (string txt, FtpServer neFtpServer, RichTextBox rtb) =>
         {
             string text = "Скачать файл: " + txt +" ?";
@@ -41,10 +41,14 @@ namespace ChatLan
                 neFtpServer.DowlandFile();
                 rtb.Text += "Скачан файл: "+ txt + "\n";
             }
+            else
+            {
+                rtb.Text += "Ошибка скачивания файла: " + txt + "\n";
+            }
         };
 
         public delegate void DelegateReqFile(string txt,  RichTextBox rtb);
-        //объект делегата реализущий метод отображения отправленного файла
+        //объект делегата реализующий метод отображения отправленного файла
         public DelegateReqFile delegateReqFile = (string txt, RichTextBox rtb) =>
         {
             rtb.Text += "Отправлен файл: " + txt + "\n";

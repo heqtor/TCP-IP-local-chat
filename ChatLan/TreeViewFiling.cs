@@ -8,11 +8,10 @@ using System.Windows.Forms;
 
 namespace ChatLan
 {
-    class TreeViewFiling : ConnectData
+    class TreeViewFiling
     {
         //переменная для вызова метода "содержания сервера"
         private FtpServer newFtpServer = new FtpServer();
-
         
         //заполнение "дерева" содержим сервера
         public void SelectContentServerIntreeView(TreeView newTreeViewContentServer)
@@ -33,7 +32,7 @@ namespace ChatLan
                 newImageList.Images.Add(Properties.Resources.circle_green_6052);
                 newTreeViewContentServer.ImageList = newImageList;
                 //добавление узлов
-                List<string> ListNodesName = new List<string>() { "XLSX", "DOCX", "TXT", "HTML", "DLL", "PPTX", "JPG" };
+                List<string> ListNodesName = new List<string>() { "XLSX", "DOC", "TXT", "HTML", "DLL", "PPTX", "JPG" };
                 for (int i = 0; i < ListNodesName.Count; i++)
                 {
                     newTreeViewContentServer.Nodes.Add(new TreeNode { Text = ListNodesName[i], ImageIndex = i, SelectedImageIndex = i });

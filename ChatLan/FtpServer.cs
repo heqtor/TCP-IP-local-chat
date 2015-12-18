@@ -19,6 +19,12 @@ namespace ChatLan
             get { return fileName; }
             set { fileName = value; }
         }
+        //переменная адреса ftp
+        private string ftpName;
+        public string FtpName
+        {
+            get { return ftpName = "ftp://192.168.1.7/"; }
+        }
 
         //метод получения файла
         public string FileNameMethod(OpenFileDialog openFileDialog)
@@ -54,7 +60,7 @@ namespace ChatLan
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string requstString = string.Format("ftp://10.37.2.224/" + FileNameMethod(openFileDialog));
+                    string requstString = string.Format(FtpName + FileNameMethod(openFileDialog));
                     FtpWebRequest request = (FtpWebRequest)WebRequest.Create(requstString);
                     // устанавливаем метод на загрузку файлов
                     request.Method = WebRequestMethods.Ftp.UploadFile;
@@ -85,7 +91,7 @@ namespace ChatLan
         {
             try
             {
-                string requstString = string.Format("ftp://10.37.2.224/" + FileName);
+                string requstString = string.Format(FtpName + FileName);
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(requstString);
                 // устанавливаем метод на загрузку файлов 
                 request.Method = WebRequestMethods.Ftp.DownloadFile;
@@ -117,7 +123,7 @@ namespace ChatLan
             string result = null;
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://10.37.2.224/");
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FtpName);
                 request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
@@ -138,7 +144,7 @@ namespace ChatLan
         {
             try
             {
-                string requstString = string.Format("ftp://10.37.2.224/" + nameFile);
+                string requstString = string.Format(FtpName + nameFile);
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(requstString);
                 // устанавливаем метод на загрузку файлов 
                 request.Method = WebRequestMethods.Ftp.DeleteFile;
